@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { parseEffort } from '@/lib/draft';
 import styles from './drafts.module.css';
 
 interface ExecutionStep {
@@ -90,7 +91,7 @@ export default function DraftsPage() {
                   <strong>Execution Plan:</strong> {draft.executionPlan.steps.length} steps
                   <span className={styles.effort}>
                     Est. {draft.executionPlan.steps.reduce((sum, step) => 
-                      sum + parseInt(step.estimatedEffort?.split('-')[0] || '1'), 0
+                      sum + parseEffort(step.estimatedEffort || '1'), 0
                     )} days
                   </span>
                 </div>

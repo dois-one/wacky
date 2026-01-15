@@ -4,10 +4,21 @@
 import { Draft, ExecutionPlan, ExecutionStep, Input } from '@/types';
 import { dataStore } from './store';
 
+// Helper function to parse effort strings like "1-2 days" or "3-5 days"
+export function parseEffort(effort: string): number {
+  const match = effort.match(/(\d+)(?:-(\d+))?/);
+  if (!match) return 1;
+  
+  const min = parseInt(match[1]);
+  const max = match[2] ? parseInt(match[2]) : min;
+  // Use the average of the range
+  return Math.ceil((min + max) / 2);
+}
+
 export class DraftService {
   // Generate a unique ID
   private generateId(): string {
-    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    return `${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
   }
 
   // Create a draft from inputs
@@ -149,7 +160,7 @@ export class DraftService {
     });
 
     const overview = `Implementation plan for "${title}" based on ${inputs.length} input${inputs.length !== 1 ? 's' : ''}. ` +
-      `Estimated total time: ${steps.reduce((sum, step) => sum + parseInt(step.estimatedEffort || '1'), 0)} days.`;
+      `Estimated total time: ${steps.reduce((sum, step) => sum + parseEffort(step.estimatedEffort || '1'), 0)} days.`;
 
     return {
       id: this.generateId(),
