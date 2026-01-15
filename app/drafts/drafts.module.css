@@ -1,0 +1,313 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.backLink {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem;
+}
+
+.empty p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.emptyButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #0070f3;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.emptyButton:hover {
+  background: #0051cc;
+  text-decoration: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.draftCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.draftHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.draftHeader h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0;
+}
+
+.status {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status.draft {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.status.ready {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.status.completed {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.draftMeta {
+  display: flex;
+  gap: 2rem;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.planSummary {
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.effort {
+  color: #0070f3;
+  font-weight: 600;
+}
+
+.expandButton {
+  width: 100%;
+  padding: 0.75rem;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0070f3;
+  transition: background 0.2s;
+}
+
+.expandButton:hover {
+  background: #e0e0e0;
+}
+
+.expandedContent {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.content {
+  margin-bottom: 2rem;
+}
+
+.content h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.markdown {
+  line-height: 1.8;
+  color: #666;
+}
+
+.markdown h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 1.5rem 0 1rem 0;
+}
+
+.markdown h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.markdown p {
+  margin-bottom: 1rem;
+}
+
+.executionPlan {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.executionPlan h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.overview {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #0070f3;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #0070f3;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.stepHeader h4 {
+  flex: 1;
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.stepEffort {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.stepDescription {
+  color: #666;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.stepStatus {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.stepStatus.pending {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.stepStatus.in-progress {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.stepStatus.completed {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .draftHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .draftMeta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .planSummary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .stepHeader {
+    flex-wrap: wrap;
+  }
+}
