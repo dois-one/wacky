@@ -24,10 +24,6 @@ export default function InputsPage() {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<string>('all');
 
-  useEffect(() => {
-    loadInputs();
-  }, [filter]);
-
   const loadInputs = async () => {
     setLoading(true);
     try {
@@ -40,6 +36,11 @@ export default function InputsPage() {
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    loadInputs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter]);
 
   const categories = ['all', 'technical', 'design', 'business', 'ideas', 'tasks', 'general'];
 

@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import styles from './new.module.css';
 
-export default function NewInputPage() {
+function NewInputForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const typeFromUrl = searchParams.get('type');
@@ -179,5 +179,13 @@ export default function NewInputPage() {
         </ul>
       </div>
     </div>
+  );
+}
+
+export default function NewInputPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <NewInputForm />
+    </Suspense>
   );
 }

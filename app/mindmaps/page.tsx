@@ -182,7 +182,7 @@ export default function MindMapsPage() {
               <div className={styles.legend}>
                 <h4>How to use:</h4>
                 <ul>
-                  <li>Click on nodes with "+ Expand" to reveal connections</li>
+                  <li>Click on nodes with &quot;+ Expand&quot; to reveal connections</li>
                   <li>Nodes are automatically organized by category</li>
                   <li>Line thickness indicates connection strength</li>
                 </ul>
