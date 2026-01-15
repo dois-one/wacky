@@ -9,8 +9,8 @@ export function parseEffort(effort: string): number {
   const match = effort.match(/(\d+)(?:-(\d+))?/);
   if (!match) return 1;
   
-  const min = parseInt(match[1]);
-  const max = match[2] ? parseInt(match[2]) : min;
+  const min = parseInt(match[1], 10);
+  const max = match[2] ? parseInt(match[2], 10) : min;
   // Use the average of the range
   return Math.ceil((min + max) / 2);
 }

@@ -10,9 +10,12 @@ function NewInputForm() {
   const searchParams = useSearchParams();
   const typeFromUrl = searchParams.get('type');
   
-  const [type, setType] = useState<'note' | 'photo' | 'recording'>(
-    (typeFromUrl as any) || 'note'
-  );
+  const [type, setType] = useState<'note' | 'photo' | 'recording'>(() => {
+    if (typeFromUrl === 'photo' || typeFromUrl === 'recording') {
+      return typeFromUrl;
+    }
+    return 'note';
+  });
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [file, setFile] = useState<File | null>(null);
